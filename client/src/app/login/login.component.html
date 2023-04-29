@@ -1,0 +1,31 @@
+
+<div>
+    <div class="container w-50 mt-5 ">
+         <h1 class="text-center" style="font-size: xx-large;">Login </h1>
+        
+        <form [formGroup]="loginForm" action="" (ngSubmit)="login()" class="border  p-5 text-white " style="border-radius:20px;background-color: rgba(0, 0, 0, 0.3);">
+            
+            <div class="mt-2 p-2 fw-bold fs-5">
+                <label for="a1">Username</label>
+                <input formControlName="uname" type="text " id="uname" name="uname1" [class]="iclass">
+            </div>
+            <div *ngIf="this.loginForm.get('uname')?.errors && this.loginForm.get('uname')?.touched">
+                <p class="text-danger">accepts only characters</p>
+            </div>
+            <div class="mt-2 p-2 fw-bold fs-5">
+                <label for="c1">Password</label>
+                <input formControlName="psw"  type="password" id="psw1" name="paswrd1" class="form-control  ">
+            </div>
+            <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+                <p class="text-danger">acceptes only numbers and characters</p>
+            </div>
+            
+            <div class="mt-2 p-2 text-center fw-bold">
+                <button type="submit"  class="btn btn-outline-light"  style="width: 100px;">login</button>
+        
+            </div>
+           <div class="text-center" style="color: rgb(224, 3, 3);">Not registerd? <a style="text-decoration: none;color: rgb(7, 195, 228); font-style: italic;" routerLink="register">Register</a></div>
+        </form>
+    </div>
+</div>
+

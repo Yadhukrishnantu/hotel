@@ -1,0 +1,34 @@
+<div class="container w-50 mt-5 ">
+
+    <h1 class="text-center" style="font-size: xx-large;">Register </h1>
+    
+  <form [formGroup]="registerFrom" action="" (ngSubmit)="register()" class="border  p-5 text-white " style="border-radius:20px;background-color: rgba(0, 0, 0, 0.3);">
+      <h2 class="text-center">Sign Up To Bank</h2>
+      <div class="mt-2 p-2 fw-bold fs-5">
+
+          <input formControlName="uname" type="text "  id="unamid" name="usern" placeholder="Enter Username" class="form-control  ">
+      </div>
+      <div *ngIf="this.registerFrom.get('uname')?.errors && this.registerFrom.get('uname')?.touched">
+          <p class="text-danger">accepts only characters</p>
+      </div>
+      <div class="mt-2 p-2 fw-bold fs-5">
+         
+          <input formControlName="Email" type="text "  id="Email" name="Email" placeholder="Enter Your Email" class="form-control  ">
+      </div>
+      <div *ngIf="this.registerFrom.get('Email')?.errors && this.registerFrom.get('Email')?.touched">
+          <p class="text-danger">Enter Valid Email</p>
+      </div>
+      <div class="mt-2 p-2 fw-bold fs-5">
+          
+          <input formControlName="psw"  type="password"  id="psw1" name="paswrd1" placeholder="Enter Password" class="form-control  ">
+      </div>
+      <div *ngIf="this.registerFrom.get('psw')?.errors && this.registerFrom.get('psw')?.touched">
+          <p class="text-danger">acceptes only numbers and characters</p>
+      </div>
+      <div class="mt-2 p-2 text-center fw-bold">
+          <button type="submit"  class="btn btn-outline-light"  style="width: 100px;">Register</button>
+       
+
+      </div>
+  </form>
+</div>

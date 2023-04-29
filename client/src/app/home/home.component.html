@@ -1,0 +1,67 @@
+<nav style="background-color: rgb(28, 28, 29);" class="navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">HotelBooking</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bookedroom" routerLinkActive="active-link">Booked Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active-link">About</a>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="text-end" style="margin-top: 4px;">
+  
+  <button (click)="logout()" class="btn btn-danger" style="margin-left: 5px;margin-right: 4px;">Logout</button>
+ </div>
+
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+ 
+      <div class="col-lg-4" *ngFor="let i of HotelList"  >
+         <div class="foodbox mt-3 mb-3">
+             <img src={{i.image[0]}} >
+             <h1 style="color: black;"><strong>ApartMent Name :</strong> {{i.apartmentName}}</h1>
+             <p style="color: black;"><strong>Price :</strong> {{i.price | currency:"INR"}}</p>
+             <p style="color: black;"> <strong>Is Available :</strong> {{i.available}}</p>
+             <p class="text-center" style="color: black; background-color: greenyellow; border-radius: 8px;" ><strong>Rating :</strong> {{i.rating}}</p>
+             <p style="color: black;"><strong>Reviews :</strong> {{i.review}}</p>
+ 
+             <a class="buybtn"[routerLink]="['/viewHotel',i.id]" >View Details</a>
+ 
+         </div>
+      </div>
+    </div>
+ </div>
+
+ <div class=" container-fluid footer">
+  <div class="row">
+
+      <div class="col-lg-6">
+          <h1>Book The Hotel</h1>
+          <p>STAY HAPPY , STAY HEALTHY</p>
+      </div>
+     
+<div class="col-lg-2" style="margin-left: 417px;">
+  <a href="#" target="_blank"><i class="bi bi-facebook"></i> </a>
+  <a href="#" target="_blank"><i class="bi bi-whatsapp"></i> </a>
+  <a href="#" target="_blank"><i class="bi bi-instagram"></i> </a>
+  <a href="#" target="_blank"><i class="bi bi-youtube"></i> </a>
+</div>
+
+  </div>
+</div>
+
+ 
